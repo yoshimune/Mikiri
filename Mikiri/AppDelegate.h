@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  Mikiri
 //
-//  Created by 正木 良宗 on 2013/11/24.
-//  Copyright Yoshimune 2013年. All rights reserved.
+//  Created by (｀･ω･´) on 2013/11/24.
+//  Copyright (｀･ω･´) 2013年. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

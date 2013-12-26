@@ -2,22 +2,22 @@
 //  IntroLayer.m
 //  Mikiri
 //
-//  Created by 正木 良宗 on 2013/11/24.
-//  Copyright Yoshimune 2013年. All rights reserved.
+//  Created by (｀･ω･´) on 2013/11/24.
+//  Copyright (｀･ω･´) 2013年. All rights reserved.
 //
 
 
 // Import the interfaces
 #import "IntroLayer.h"
-#import "HelloWorldLayer.h"
+#import "Mikiri_Menu.h"
 
 
 #pragma mark - IntroLayer
 
-// HelloWorldLayer implementation
+// Mikiri_Menu implementation
 @implementation IntroLayer
 
-// Helper class method that creates a Scene with the HelloWorldLayer as the only child.
+// Helper class method that creates a Scene with the Mikiri_Menu as the only child.
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
@@ -44,8 +44,9 @@
 		CCSprite *background;
 		
 		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
-			background = [CCSprite spriteWithFile:@"Default.png"];
-			background.rotation = 90;
+			background = [CCSprite spriteWithFile:@"start.png"];
+			//background = [CCSprite spriteWithFile:@"Default.png"];
+			//background.rotation = 90;
 		} else {
 			background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
 		}
@@ -61,6 +62,14 @@
 -(void) onEnter
 {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    
+    [[CCDirector sharedDirector] setDisplayStats:NO];
+    
+	CCSprite* background = [CCSprite spriteWithFile:@"start.png"];
+	background.position = ccp(size.width/2, size.height/2);
+	[self addChild:background z:0];
+    
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[Mikiri_Menu scene] ]];
 }
 @end

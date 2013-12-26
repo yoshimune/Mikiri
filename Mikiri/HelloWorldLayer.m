@@ -2,8 +2,8 @@
 //  HelloWorldLayer.m
 //  Mikiri
 //
-//  Created by 正木 良宗 on 2013/11/24.
-//  Copyright Yoshimune 2013年. All rights reserved.
+//  Created by (｀･ω･´) on 2013/11/24.
+//  Copyright (｀･ω･´) 2013年. All rights reserved.
 //
 
 
@@ -101,9 +101,19 @@
 		
 		// Add the menu to the layer
 		[self addChild:menu];
+        
+        //タッチイベント追加
+        UITapGestureRecognizer *singleFingerTap = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)] autorelease];
+        singleFingerTap.numberOfTapsRequired = 1;
+        [[[CCDirector sharedDirector] view]addGestureRecognizer:singleFingerTap];
 
 	}
 	return self;
+}
+
+- (void)handleSingleTap:(UIPanGestureRecognizer *)recognizer{
+    
+    NSLog(@"touchtouch!!!!!!!!!");    
 }
 
 // on "dealloc" you need to release all your retained objects

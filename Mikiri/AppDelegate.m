@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  Mikiri
 //
-//  Created by 正木 良宗 on 2013/11/24.
-//  Copyright Yoshimune 2013年. All rights reserved.
+//  Created by (｀･ω･´) on 2013/11/24.
+//  Copyright (｀･ω･´) 2013年. All rights reserved.
 //
 
 #import "cocos2d.h"
@@ -20,10 +20,10 @@
 	
 	// iPhone only
 	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-		return UIInterfaceOrientationMaskLandscape;
+		return UIInterfaceOrientationMaskPortrait;
 	
 	// iPad only
-	return UIInterfaceOrientationMaskLandscape;
+	return UIInterfaceOrientationMaskPortrait;
 }
 
 // Supported orientations. Customize it for your own needs
@@ -32,11 +32,11 @@
 {
 	// iPhone only
 	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-		return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+		return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 	
 	// iPad only
 	// iPhone only
-	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+	return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 // This is needed for iOS4 and iOS5 in order to ensure
